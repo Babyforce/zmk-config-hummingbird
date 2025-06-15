@@ -115,22 +115,22 @@
 
         cb_z {
             bindings = <&kp Z>;
-            key-positions = <11 20>;
+            key-positions = <11 1>;
         };
 
         cb_b {
             bindings = <&kp B>;
-            key-positions = <13 22>;
+            key-positions = <13 3>;
         };
 
         cb_dot {
             bindings = <&kp N>;
-            key-positions = <16 23>;
+            key-positions = <16 6>;
         };
 
         cb_k {
             bindings = <&kp SLASH>;
-            key-positions = <18 25>;
+            key-positions = <18 8>;
         };
 
         cz {
@@ -189,6 +189,26 @@
         enter {
             bindings = <&kp ENTER>;
             key-positions = <26 27>;
+        };
+
+        z {
+            bindings = <&kp Z>;
+            key-positions = <11 20>;
+        };
+
+        b {
+            bindings = <&kp B>;
+            key-positions = <13 22>;
+        };
+
+        dot {
+            bindings = <&kp N>;
+            key-positions = <16 23>;
+        };
+
+        k {
+            bindings = <&kp SLASH>;
+            key-positions = <18 25>;
         };
     };
 
