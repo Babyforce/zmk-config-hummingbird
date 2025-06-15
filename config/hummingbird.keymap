@@ -237,9 +237,9 @@
         nav_layer {
             display-name = "Nav";
             bindings = <
-&none      &kp LC(C)     &none              &none                &none    &none          &kp HOME  &kp UP_ARROW    &kp PAGE_UP    &kp PRINTSCREEN
-&kp LC(A)  &kp LEFT_ALT  &hml LCTRL ESCAPE  &hmr LEFT_SHIFT TAB  &none    &none          &kp DOWN  &kp DOWN_ARROW  &kp RIGHT      &kp CAPS
-           &kp LC(X)     &none              &kp LC(V)                                    &kp END   &none           &kp PAGE_DOWN
+&none      &kp LC(W)     &none              &none                &none    &none          &kp HOME        &kp UP_ARROW    &kp PAGE_UP    &kp PRINTSCREEN
+&kp LC(A)  &kp LEFT_ALT  &hml LCTRL ESCAPE  &hmr LEFT_SHIFT TAB  &none    &none          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp CAPS
+           &kp LC(X)     &none              &kp LC(V)                                    &kp END         &none           &kp PAGE_DOWN
                                             &none                &none    &kp BACKSPACE  &mo 3
             >;
         };
