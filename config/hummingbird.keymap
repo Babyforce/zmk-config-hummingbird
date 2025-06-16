@@ -108,6 +108,16 @@
 
             tapping-term-ms = <200>;
         };
+
+        layer_transform: layer_transform {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TRANSFORM";
+            bindings = <&kp>, <&mo>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+        };
     };
 
     combos {
@@ -134,22 +144,22 @@
         };
 
         cz {
-            bindings = <&kp RA(Z)>;
+            bindings = <&kp Z>;
             key-positions = <20 21>;
         };
 
         cb {
-            bindings = <&kp RA(B)>;
+            bindings = <&kp B>;
             key-positions = <22 21>;
         };
 
         cdot {
-            bindings = <&kp RA(N)>;
+            bindings = <&kp N>;
             key-positions = <23 24>;
         };
 
         ck {
-            bindings = <&kp RA(SLASH)>;
+            bindings = <&kp SLASH>;
             key-positions = <25 24>;
         };
 
@@ -247,30 +257,39 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp E         &kp R           &kp T          &kp Y           &kp U           &kp I         &kp O        &kp P
-&hml LGUI A  &hml RALT S  &hml LCTRL D  &f_hml LSHFT F  &kp G          &kp H           &f_hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
-             &kp X        &kp C         &kp V                                          &kp M           &kp COMMA     &kp DOT
-                                        &mo 2           &lt 1 SPACE    &kp LEFT_SHIFT  &kp RIGHT_ALT
+&kp Q        &kp W        &kp E         &kp R           &kp T          &kp Y                     &kp U                         &kp I         &kp O        &kp P
+&hml LGUI A  &hml RALT S  &hml LCTRL D  &f_hml LSHFT F  &kp G          &kp H                     &f_hmr RSHFT J                &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
+             &kp X        &kp C         &kp V                                                    &kp M                         &kp COMMA     &kp DOT
+                                        &mo 2           &lt 1 SPACE    &mt LEFT_SHIFT BACKSPACE  &layer_transform RIGHT_ALT 3
             >;
         };
 
         nav_layer {
             display-name = "Nav";
             bindings = <
-&none      &kp LC(W)     &none              &none                &none    &none          &kp HOME        &kp UP_ARROW    &kp PAGE_UP    &kp PRINTSCREEN
-&kp LC(A)  &kp LEFT_ALT  &hml LCTRL ESCAPE  &hmr LEFT_SHIFT TAB  &none    &none          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp CAPS
-           &kp LC(X)     &none              &kp LC(V)                                    &kp END         &none           &kp PAGE_DOWN
-                                            &none                &none    &kp BACKSPACE  &mo 3
+&none      &kp LC(W)   &none      &none      &none    &none   &kp HOME        &kp UP_ARROW    &kp PAGE_UP    &kp PRINTSCREEN
+&kp LC(A)  &kp ESCAPE  &kp ENTER  &kp TAB    &none    &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp CAPS
+           &kp LC(X)   &none      &kp LC(V)                   &kp END         &none           &kp PAGE_DOWN
+                                  &none      &none    &trans  &mo 4
             >;
         };
 
         num_layer {
             display-name = "NUMERIC";
             bindings = <
-&none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &none          &none        &none            &none            &none
-&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_DOT    &none          &kp KP_PLUS  &kp KP_SUBTRACT  &kp KP_MULTIPLY  &kp KP_DIVIDE
-              &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                               &none        &none            &none
-                                          &none         &none         &kp BACKSPACE  &none
+&none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none    &none   &none        &none            &none            &none
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N    &none   &kp KP_PLUS  &kp KP_SUBTRACT  &kp KP_MULTIPLY  &kp KP_DIVIDE
+              &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                   &none        &none            &none
+                                          &none         &none    &trans  &kp SPACE
+            >;
+        };
+
+        ralt_dead_key {
+            bindings = <
+&none  &none  &none      &none      &none    &none  &none      &none         &none  &none
+&none  &none  &kp RA(Z)  &kp RA(B)  &none    &none  &kp RA(N)  &kp RA(FSLH)  &none  &none
+       &none  &none      &none                      &none      &none         &none
+                         &none      &none    &none  &none
             >;
         };
 
@@ -294,12 +313,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        MediaLayer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
