@@ -112,7 +112,7 @@
         layer_transform: layer_transform {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TRANSFORM";
-            bindings = <&kp>, <&mo>;
+            bindings = <&kp>, <&sl>;
 
             #binding-cells = <2>;
             flavor = "balanced";
