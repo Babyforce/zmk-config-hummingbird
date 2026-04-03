@@ -275,10 +275,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp E         &kp R           &kp T          &kp Y                     &kp U                         &kp I         &kp O        &kp P
-&hml LGUI A  &hml RALT S  &hml LCTRL D  &f_hml LSHFT F  &kp G          &kp H                     &f_hmr RSHFT J                &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
-             &kp X        &kp C         &kp V                                                    &kp M                         &kp COMMA     &kp DOT
-                                        &mo 2           &lt 1 SPACE    &mt LEFT_SHIFT BACKSPACE  &layer_transform RIGHT_ALT 3
+&kp Q        &kp W        &kp E         &kp R           &kp T    &kp Y                    &kp U                           &kp I         &kp O        &kp P
+&hml LGUI A  &hml RALT S  &hml LCTRL D  &f_hml LSHFT F  &kp G    &kp H                    &f_hmr RSHFT J                  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMICOLON
+             &kp X        &kp C         &kp V                                             &kp M                           &kp COMMA     &kp DOT
+                                        &lt 1 SPACE     &mo 2    &mt RIGHT_ALT BACKSPACE  &layer_transform RIGHT_SHIFT 3
             >;
         };
 
@@ -304,10 +304,10 @@
 
         special_dead_key {
             bindings = <
-&kp RA(Z)  &none  &none  &none  &kp RA(B)    &kp RA(N)       &none  &none  &none  &kp RA(SLASH)
-&kp Z      &none  &none  &none  &kp B        &kp N           &none  &none  &none  &kp SLASH
-           &none  &none  &none                               &none  &none  &none
-                         &none  &none        &kp LEFT_SHIFT  &none
+&kp RA(Z)  &kp RA(Z)  &none  &kp RA(B)  &kp RA(B)    &kp RA(N)  &kp RA(N)       &none  &kp RA(SLASH)  &kp RA(SLASH)
+&kp Z      &kp Z      &none  &kp B      &kp B        &kp N      &kp N           &none  &kp SLASH      &kp SLASH
+           &none      &none  &none                              &none           &none  &none
+                             &none      &none        &none      &kp LEFT_SHIFT
             >;
         };
 
